@@ -3,8 +3,8 @@
 ''
 '' Author: Brett Schwarz
 ''
-!$PUML_THEME = "aws-blue"
-!$THEME      = "aws-blue"
+!$PUML_THEME = "green"
+!$THEME      = "green"
 ''
 '' User can specify the PUML_BGCOLOR via command line or set this variable before
 '' loading this theme file. PUML_BGCOLOR is the background color of the image that is 
@@ -39,51 +39,63 @@ skinparam useBetaStyle false
 ''
 '' Supplementary Colors
 ''
-!$WHITE      = "#FFF"
-!$GRAY_LIGHT = "#eeeeee"
-!$GRAY       = "#444444"
-!$PRIMARY    = "#0073bb"
-!$WARNING    = "#ECDD00"
-!$LIGHT      = "#abb6c2"
-!$DARK       = "#333333"
+!$WHITE           = "#FFF"
+!$GRAY_LIGHT      = "#D8D8D8"
+!$GRAY            = "#54595F"
+!$PRIMARY         = "#2B8000"
+!$INFO            = "#66CC00"
+!$WARNING         = "#FACA69"
+!$LIGHT           = "#F7F7F8"
+!$DARK            = "#2A2C2E"
+!$SECONDARY       = "#4B286D"
+!$SECONDARY_LIGHT = %lighten($SECONDARY, $PUML_GRADIENT)
+!$DANGER          = "#C12335"
+!$DARK10           = %darken($PRIMARY,10)
+!$DARK20           = %darken($PRIMARY,20)
+!$DARK30           = %darken($PRIMARY,30)
+!$DARK40           = %darken($PRIMARY,40)
+!$DARK50           = %darken($PRIMARY,50)
+!$LIGHT10          = %lighten($PRIMARY,10)
+!$LIGHT20          = %lighten($PRIMARY,20)
+!$LIGHT30          = %lighten($PRIMARY,30)
+!$LIGHT40          = %lighten($PRIMARY,40)
+!$LIGHT50          = %lighten($PRIMARY,50)
 ''
 '' define colors based on PUML_MODE
 ''
 !if ($PUML_MODE == "light")
-    !$SECONDARY      = "#eeeeee"
+    ' !$SECONDARY      = "#eeeeee"
     '' hardcode $SECONDARY_LIGHT since it is so close to white
-    !$SECONDARY_LIGHT = "ffffff"
-    !$SUCCESS        = "#1D8102"
-    !$INFO           = "#0073bb"
+    ' !$SECONDARY_LIGHT = "ffffff"
+    !$SUCCESS        = "#66CC00"
+    ' !$INFO           = "#4B286D"
     !$NOTE_TEXT      = $DARK
-    !$DANGER         = "#d13212"
     !$SECONDARY_TEXT = $DARK
     !$FGCOLOR        = $DARK
 	!$DIAMOND_BD     = %darken($SECONDARY, $PUML_GRADIENT)
     !$ARROW          = %lighten($GRAY, 40)
-    !$BOXBG          = "#EEEEEE30"
-    !$NOTEBG          = "#EEEEEE80"
+	!$BOXBG          = "#EEEEEE30"
+	!$NOTEBG          = "#EEEEEE80"
     ''
     '' Assume if the background is transparent, that the 
     '' background will be dark for this theme
     ''
     !assume transparent light
 !else
-    !$PRIMARY        = "#00a1c9"
-    !$SECONDARY      = "#444444"
-    !$SECONDARY_LIGHT = %lighten($SECONDARY, $PUML_GRADIENT)
-    !$SUCCESS        = "#6aaf35"
-    !$INFO           = "#00a1c9"
-    !$NOTE_TEXT      = $WHITE
-    !$DANGER         = "#eb6f6f"
+    ' !$PRIMARY        = "#00a1c9"
+    ' !$SECONDARY      = "#444444"
+    ' !$SECONDARY_LIGHT = %lighten($SECONDARY, $PUML_GRADIENT)
+    !$SUCCESS        = "#66CC00"
+    ' !$INFO           = "#4B286D"
+	!$NOTE_TEXT      = $WHITE
     !$SECONDARY_TEXT = $WHITE
     !$FGCOLOR        = $WHITE
 	!$DIAMOND_BD     = %lighten($SECONDARY, $PUML_GRADIENT)
     !$ARROW          = $GRAY_LIGHT
     !$LIGHT          = "#333333"
     !$DARK           = "#abb6c2"
-    !$BOXBG          = "#EEEEEE30"
-    !$NOTEBG          = "#EEEEEE30"
+	!$BOXBG          = "#EEEEEE30"
+	!$NOTEBG          = "#EEEEEE30"
     ''
     '' Assume if the background is transparent, that the 
     '' background will be dark for this theme
@@ -101,7 +113,6 @@ skinparam useBetaStyle false
 !$SUCCESS_LIGHT   = %lighten($SUCCESS, $PUML_GRADIENT)
 !$INFO_DARK       = %darken($INFO, $PUML_GRADIENT)
 !$INFO_LIGHT      = %lighten($INFO, $PUML_GRADIENT)
-!$INFO_LIGHT2     = %lighten($INFO_LIGHT, $PUML_GRADIENT)
 !$DANGER_DARK     = %darken($DANGER, $PUML_GRADIENT)
 !$DANGER_LIGHT    = %lighten($DANGER, $PUML_GRADIENT)
 !$WARNING_DARK    = %darken($WARNING, $PUML_GRADIENT)
@@ -121,7 +132,7 @@ skinparam useBetaStyle false
 !$HEADER_TEXT  = $WHITE
 ''
 !if ($PUML_OUTLINE == "true")
-	'!$HEADER_TEXT  = $PRIMARY_TEXT
+	!$HEADER_TEXT  = $PRIMARY_TEXT
 	!$PRIMARY_TEXT = $PRIMARY_LIGHT
 	!$INFO_TEXT    = $INFO_LIGHT
 	!$WARNING_TEXT = $WARNING_LIGHT
@@ -132,7 +143,7 @@ skinparam useBetaStyle false
 	!$SECONDARY_BG = $PUML_BGCOLOR
 !else
 	!$DARK_BG      = $DARK
-	!$INFO_BG      = $INFO_LIGHT
+	!$INFO_BG      = $INFO
 	!$DANGER_BG    = $DANGER
 	!$WARNING_BG   = $WARNING
 	!$SECONDARY_BG = $SECONDARY
@@ -197,14 +208,15 @@ skinparam useBetaStyle false
 ''
 '' Global Default Values
 ''
+skinparam SequenceBoxBackgroundColor $BOXBG
 skinparam defaultFontName       "Verdana"
-skinparam defaultFontSize       12
+skinparam defaultFontSize       20
 skinparam dpi                   100
 skinparam shadowing             false
 skinparam roundcorner           30
-skinparam ParticipantPadding    40
-skinparam BoxPadding            40
-skinparam Padding               14
+skinparam ParticipantPadding    20
+skinparam BoxPadding            20
+skinparam Padding               9
 skinparam ArrowColor            $DARK
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
@@ -218,13 +230,15 @@ skinparam stereotype {
     NBackgroundColor $INFO_LIGHT
     NBorderColor $INFO_DARK
 }
+
 skinparam title {
-	FontSize	    	         20
+	FontSize	    	         24
 	BorderRoundCorner            30
 	BorderThickness 	         1
 	BackgroundColor  $SECONDARY_LIGHT-$SECONDARY
-	FontColor $PRIMARY
+	FontColor $WHITE
 	BorderColor $SECONDARY
+	TextAlignment center
 }
 
 skinparam legend {
@@ -265,9 +279,9 @@ skinparam activity {
 	StartColor $INFO
 	EndColor $INFO
 	''
-	DiamondBackgroundColor $SECONDARY_BG
-  	DiamondBorderColor $DIAMOND_BD
-  	DiamondFontColor $SECONDARY_TEXT
+	DiamondBackgroundColor $LIGHT_LIGHT-$LIGHT
+  	DiamondBorderColor $SECONDARY
+  	DiamondFontColor $SECONDARY
 }
 !endsub
 
@@ -303,7 +317,7 @@ skinparam sequence {
 	StartColor $PRIMARY
 	EndColor $PRIMARY
 	''
-	BoxBackgroundColor $PUML_BGCOLOR
+	' BoxBackgroundColor $PUML_BGCOLOR
 	BoxBorderColor $DARK
 	BoxFontColor $DARK
 	''
@@ -315,10 +329,9 @@ skinparam sequence {
 	''
 	GroupBorderColor $DARK
 	GroupFontColor $DARK
-	GroupHeaderFontColor $INFO
-	GroupBackgroundColor $SECONDARY
-	GroupBodyBackgroundColor $PUML_BGCOLOR
-	GroupHeaderBackgroundColor $PUML_BGCOLOR
+	GroupHeaderFontColor $SECONDARY
+	GroupBackgroundColor $NOTEBG
+	' GroupBodyBackgroundColor $PUML_BGCOLOR
 	''
 	DividerBackgroundColor $DARK
     DividerBorderColor $DARK
@@ -383,7 +396,7 @@ skinparam agent {
 skinparam note {
 	BorderThickness 3
 	BackgroundColor $NOTEBG
-	BorderColor $INFO_DARK
+	BorderColor $SECONDARY
 	FontColor $NOTE_TEXT
 }
 !endsub
@@ -446,6 +459,7 @@ skinparam database {
 skinparam class {
 	$primary_scheme()
 	FontColor $HEADER_TEXT
+	BackgroundColor $PRIMARY_LIGHT
 	HeaderBackgroundColor $PRIMARY_LIGHT-$PRIMARY_DARK
 	StereotypeFontColor $DARK
 	BorderThickness 1
@@ -569,16 +583,12 @@ wbsDiagram, mindmapDiagram {
     LineThickness 1
     Margin 10
     Padding 6
-    FontSize 12
     Shadowing 0.0
   }
   node {
     $primary_scheme()
     Padding 15
     RoundCorner 30
-  }
-  LeafNode {
-	FontSize 10
   }
   caption {
     LineThickness 0
