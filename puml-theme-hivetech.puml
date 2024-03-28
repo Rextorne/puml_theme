@@ -1,9 +1,8 @@
 ''
-'' superhero theme based off of the bootstrap theme of the same name
-'' https://bootswatch.com/superhero/
+'' Hivetech theme based off of the superhero theme of the same name
+'' https://github.com/bschwarz/puml-themes/blob/master/themes/superhero/puml-theme-superhero.puml
 ''
-'' Author: Brett Schwarz
-'' Copyright (c) 2019 by Brett Schwarz
+'' Author: Nico Rudolph
 
 !$THEME = "superhero"
 
@@ -11,7 +10,7 @@
 !$BGCOLOR = "transparent"
 !endif
 
-skinparam backgroundcolor transparent
+skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
 
 ''
