@@ -36,7 +36,7 @@ skinparam useBetaStyle false
 !$WARNING = "#f0ad4e"
 !$DANGER = "#d9534f"
 !$LIGHT = "#abb6c2"
-!$DARK = "#4E5D6C"
+!$DARK = "#222222"
 
 '' *_DARK = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
