@@ -11,7 +11,7 @@
 !$BGCOLOR = "transparent"
 !endif
 
-skinparam backgroundColor $BGCOLOR
+skinparam backgroundcolor transparent
 skinparam useBetaStyle false
 
 ''
