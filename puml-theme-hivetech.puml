@@ -33,7 +33,7 @@ skinparam useBetaStyle false
 !$PRIMARY = "#FF3300"
 !$SECONDARY = "#222222"
 !$SUCCESS = "#5cb85c"
-!$INFO = "#5bc0de"
+!$INFO = "#222222"
 !$WARNING = "#f0ad4e"
 !$DANGER = "#d9534f"
 !$LIGHT = "#abb6c2"
